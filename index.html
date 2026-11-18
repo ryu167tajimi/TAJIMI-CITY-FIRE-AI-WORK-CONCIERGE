@@ -35,7 +35,7 @@
 #staffDayDialog::backdrop{background:#10273688}
 #staffDayDialog label{display:block;margin-top:10px}
 #staffDayDialog .staff-summary{background:#eef5f9;padding:12px;border-radius:8px;margin:12px 0;line-height:1.7}
-</style><style>/* Ver.2.9 brand refresh */
+</style><style>/* Brand header */
 .brand-header{padding-top:22px;padding-bottom:21px;background:#fff;color:#163b58;border-bottom:2px solid #d9e5ef}
 .brand-header .brand-department{font-size:12px;letter-spacing:.14em;font-weight:750;color:#356e91}
 .brand-header h1{font-size:clamp(23px,3.8vw,33px);line-height:1.2;letter-spacing:.025em;margin:8px 0 7px;color:#143d5b}
@@ -43,7 +43,7 @@
 .brand-header .brand-subtitle{font-size:12px;color:#647c8c;margin-top:7px}
 .brand-header .brand-version{display:inline-block;margin-left:8px;font-size:11px;color:#547086}
 @media print{.brand-header{display:none!important}}
-</style></head><body><header class="brand-header"><div class="brand-department">TAJIMI CITY FIRE DEPARTMENT</div><h1>AI WORK CONCIERGE</h1><div class="brand-japanese">多治見市消防本部 AI業務コンシェルジュ</div><div class="brand-subtitle">業務計画・勤務管理・過去業務の活用を、ひとつに。 <span class="brand-version">Ver.2.9</span></div></header><main><p class="notice no-print">試作版：入力内容はこのブラウザ内に保存され、他端末とは共有されません。個人情報・機密情報・実際の勤務者情報は入力しないでください。写真の文字認識は未実装です。撮影画像を見ながら内容を確認・転記する方式です。</p><nav class="tabs no-print" aria-label="機能切替"><button type="button" id="overviewNav">業務計画一覧</button><button type="button" id="conciergeNav">業務コンシェルジュ</button><button type="button" id="homeNav" class="active">設定</button><button data-tab="assignmentMaster">職員名簿・担当設定</button><button data-tab="plan">業務登録</button><button data-tab="photo">写真から入力</button><button data-tab="progress">進捗管理</button><button data-tab="handoff">申し送り</button><button data-tab="printPanel">A4印刷</button><button data-tab="data">データ管理</button><button type="button" id="moreNav" aria-expanded="false">その他の機能 ▾</button></nav>
+</style></head><body><header class="brand-header"><div class="brand-department">TAJIMI CITY FIRE DEPARTMENT</div><h1>AI WORK CONCIERGE</h1><div class="brand-japanese">多治見市消防本部 AI業務コンシェルジュ</div></header><main><nav class="tabs no-print" aria-label="機能切替"><button type="button" id="overviewNav">業務計画一覧</button><button type="button" id="conciergeNav">業務コンシェルジュ</button><button type="button" id="homeNav" class="active">設定</button><button data-tab="assignmentMaster">職員名簿・担当設定</button><button data-tab="plan">業務登録</button><button data-tab="photo">写真から入力</button><button data-tab="progress">進捗管理</button><button data-tab="handoff">申し送り</button><button data-tab="printPanel">A4印刷</button><button data-tab="data">データ管理</button><button type="button" id="moreNav" aria-expanded="false">その他の機能 ▾</button></nav>
 <section id="conciergePanel" class="panel no-print" hidden>
 <h2>業務コンシェルジュ</h2><p class="muted">昨年度の実施記録をもとに、今年の準備や確認を提案します。過去に登録されていない内容は推測しません。</p>
 <div class="concierge-toolbar"><div><label for="conciergeDate">確認する日付</label><input id="conciergeDate" type="date"></div><div><label for="conciergeRange">昨年度の比較期間</label><select id="conciergeRange"><option value="14">前後14日</option><option value="30" selected>前後30日</option><option value="60">前後60日</option></select></div><button id="conciergeRefresh" type="button">昨年度の業務を確認</button></div>
