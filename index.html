@@ -320,7 +320,7 @@ const fiscal=d=>d.getFullYear()-(d.getMonth()<3?1:0);
 function show(){document.querySelectorAll('main > section.panel').forEach(p=>{p.hidden=p!==view;if(p.id==='homeScreen')p.style.display='none'});document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active',b===nav));render()}
 function render(){if(!date.value)return;const [y,m,day]=date.value.split('-').map(Number),d=new Date(y,m-1,day,12),fy=fiscal(d),anchorDate=new Date(fy,3,2,12),offset=Math.round((d-anchorDate)/86400000);
 const groupAnchor=Number($('homeAnchor')?.value||read('gyomu_home_anchor_v1')[fy]||1),g=Math.abs(offset)%2===0?groupAnchor:3-groupAnchor;
-const department=$('homeDept')?.value||'笠原消防署',master=read('gyomu_assignment_master_v1'),people=(master[String(fy)]||[]).filter(p=>p.department===department&&(p.group===`第${g}グループ`||['署長（別枠）','会計年度任用職員（別枠）'].includes(p.group)));
+const department=$('homeDept')?.value||'笠原消防署',master=read('gyomu_assignment_master_v1'),people=(master[String(fy)]||[]).filter(p=>p.department===department&&(p.group===`第${g}グループ`||['署長（別枠）','会計年度任用職員（別枠）'].includes(p.group))).sort((a,b)=>{const order=x=>x.group==='署長（別枠）'?0:x.group==='会計年度任用職員（別枠）'?1:2;return order(a)-order(b)});
 const db=read('gyomu_concierge_v02'),plan=(db.plans||{})[date.value]||{},tasks=(db.tasks||[]).filter(t=>t.day===date.value&&(t.department||'笠原消防署')===department&&(!t.group||t.group===`第${g}グループ`||t.group==='共通業務'||t.group==='グループ指定なし'));
 const sections=[['署外業務',['署外業務']],['署内業務',['署内業務','その他']],['訓練',['訓練']],['教養',['教養']],['点検',['点検']]];
 const attendanceForOwners=read('gyomu_attendance_v22')[date.value+'|'+department]||{};
